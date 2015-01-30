@@ -1,30 +1,67 @@
 <h1>Welcome to the Concert Connection</h1>
 
-<a href="/add_band" ><button type="button" class="btn btn-success">Add a band</button></a>
+<div class ="row">
 
-<% if @venues.any?()%>
+  <div class="col-sm-6 col-md-6">
 
-<h3>Concert Venues</h3>
-<ul>
-  <% @venues.each do |venue|%>
-    <li><a href="/venue/<%= venue.id()%>"><%= venue.name() %></a></li>
-  <% end%>
-</ul>
+    <% if @bands.any?()%>
+
+    <h3>Bands</h3>
+    <ul>
+      <% @bands.each do |band|%>
+      <li><a href="/band/<%= band.id()%>"><%= band.name() %></a></li>
+      <% end%>
+    </ul>
 
 
-  <h3>Add Another Venue</h3>
+    <h3>Add Another Band</h3>
 
-<% else %>
+    <% else %>
 
-  <h3>Add some venues</h3>
+    <h3>Add some bands</h3>
 
-<% end %>
+    <% end %>
 
-<form action="/add_venue" method = "post">
-  <div class="form_group">
-    <label for="name">Venue Name</label>
-    <input id="name" name="name" type="text" class= "form-control">
+    <form action="/add_band" method = "post">
+      <div class="form_group">
+        <label for="name">Band Name</label>
+        <input id="name" name="name" type="text" class= "form-control">
+      </div>
+
+      <button type="submit" class="btn btn-success">Add Band</button>
+    </form>
   </div>
 
-  <button type="submit" class="btn btn-success">Add Venue</button>
-</form>
+
+  <div class="col-sm-6 col-md-6">
+
+    <% if @venues.any?()%>
+
+    <h3>Concert Venues</h3>
+    <ul>
+      <% @venues.each do |venue|%>
+        <li><a href="/venue/<%= venue.id()%>"><%= venue.name() %></a></li>
+      <% end%>
+    </ul>
+
+
+      <h3>Add Another Venue</h3>
+
+    <% else %>
+
+      <h3>Add some venues</h3>
+
+    <% end %>
+
+    <form action="/add_venue" method = "post">
+      <div class="form_group">
+        <label for="name">Venue Name</label>
+        <input id="name" name="name" type="text" class= "form-control">
+      </div>
+
+      <button type="submit" class="btn btn-success">Add Venue</button>
+    </form>
+
+  </div>
+
+</div>
