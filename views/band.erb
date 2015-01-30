@@ -1,0 +1,15 @@
+<h1>Welcome to <%= @band.name() %>'s Home Page</h1>
+
+
+<% if @band.venues().any?() %>
+  <h3><%= @band.name() %> has played at</h3>
+  <ul>
+    <% @band.venues().each do |band| %>
+      <%= @band.name() %>
+    <% end %>
+  </ul>
+
+
+<% end %>
+
+<a href="/band_edit/<%= @band.id()%>"><button class="btn btn-success">Edit <%= @band.name()%> and It's Concerts</button></a>

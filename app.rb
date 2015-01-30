@@ -40,12 +40,7 @@ get('/band/:id') do
   erb(:band)
 end
 
-get("/band_form") do
-
-  erb(:band_form)
-end
-
-post("/add_band") do
-
-  erb(:band)
+get("/band_edit/:id") do
+  @band = Band.find(params.fetch("id").to_i())
+  erb(:band_edit)
 end
