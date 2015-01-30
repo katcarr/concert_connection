@@ -1,0 +1,17 @@
+<h1>Welcome to <%= @venue.name %>'s Concert Page</h1>
+
+<% if @venue.bands().any?() %>
+
+  <h3>These bands have played here!</h3>
+
+  <% @venue.bands().each() do |band|%>
+    <%= band.name() %>
+  <% end %>
+
+<% else %>
+
+  <h3>No Concerts have been played here yet</h3>
+
+<% end %>
+
+<a href="/" ><button type="button" class="btn btn-link">Back To Home Page</button></a>

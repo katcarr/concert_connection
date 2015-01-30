@@ -22,3 +22,14 @@ get('/venue/:id') do
   @venue = Venue.find(params.fetch("id").to_i())
   erb(:venue)
 end
+
+
+get("/band_form") do
+
+  erb(:band_form)
+end
+
+post("/add_band") do
+
+  erb(:band)
+end
