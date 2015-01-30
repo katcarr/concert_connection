@@ -24,3 +24,25 @@
   <button type="submit" class="btn btn-danger">Delete Band</button>
 
 </form>
+
+
+<h3>Add Concerts</h3>
+
+<form action="/band_concerts" method="post">
+  <input name="id" type="hidden" value="<%= @band.id()%>">
+
+  <ul>
+    <% @venues.each() do |venue| %>
+      <li><input type="checkbox" name="venue_ids[]" value="<%= venue.id()%>"> <%= venue.name()%></li>
+    <% end %>
+  </ul>
+
+  <button type="submit" class="btn btn-success">Add Concert(s)</button>
+
+</form>
+
+<a href="/band/<%= @band.id()%>" ><button type="button" class="btn btn-link">Back To <%= @band.name()%>'s Page</button></a>
+
+<br>
+
+<a href="/" ><button type="button" class="btn btn-link">Back To Home Page</button></a>

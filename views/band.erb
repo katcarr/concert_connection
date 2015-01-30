@@ -1,11 +1,11 @@
-<h1>Welcome to <%= @band.name() %>'s Home Page</h1>
+<h1>Welcome to <em><%= @band.name() %>'s</em> Home Page</h1>
 
 
 <% if @band.venues().any?() %>
   <h3><%= @band.name() %> has played at</h3>
   <ul>
-    <% @band.venues().each do |band| %>
-      <%= @band.name() %>
+    <% @band.venues().each do |venue| %>
+      <%= venue.name() %>
     <% end %>
   </ul>
 

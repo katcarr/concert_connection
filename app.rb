@@ -42,6 +42,7 @@ end
 
 get("/band_edit/:id") do
   @band = Band.find(params.fetch("id").to_i())
+  @venues = Venue.all()
   erb(:band_edit)
 end
 
@@ -56,4 +57,13 @@ delete("/delete_band") do
   @band = Band.find(params.fetch("id").to_i())
   @band.destroy()
   redirect('/')
+end
+
+post("/band_concerts") do
+  @band = Band.find(params.fetch("id").to_i())
+  venue_ids = params.fetch("venue_ids")
+  venue_ids.each() do |id|
+    @band.venues() << Venue.find(id.to_i())
+  end
+  redirect("/band/#{@band.id()}")
 end
