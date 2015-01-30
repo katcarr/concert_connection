@@ -16,3 +16,11 @@
 
 
 <h3>Delete Band</h3>
+
+<form action="/delete_band" method="post">
+  <input name="_method" value="delete" type="hidden">
+  <input name="id" value="<%= @band.id()%>" type="hidden">
+
+  <button type="submit" class="btn btn-danger">Delete Band</button>
+
+</form>
