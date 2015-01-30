@@ -1,10 +1,21 @@
-<h2>Somehting went wrong</h2>
 
+<% if @band_venue == "venue" %>
+  <h2>Somehting went wrong when entering the venue</h2>
 <ul>
   <% @venue.errors().full_messages.each() do |message|%>
     <li><%= message %></li>
   <% end%>
 </ul>
 
+<% elsif @band_venue == "band" %>
+  <h2>Somehting went wrong when entering the band</h2>
+
+<ul>
+  <% @band.errors().full_messages.each() do |message|%>
+    <li><%= message %></li>
+  <% end%>
+</ul>
+
+<% end %>
 
 <a href="/" ><button type="button" class="btn btn-link">Back To Home Page</button></a>

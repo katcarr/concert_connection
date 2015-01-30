@@ -15,6 +15,7 @@ post("/add_venue") do
   if @venue.save()
     redirect '/'
   else
+    @band_venue = "venue"
     erb(:errors)
   end
 end
@@ -25,6 +26,7 @@ post("/add_band") do
   if @band.save()
     redirect '/'
   else
+    @band_venue = "band"
     erb(:errors)
   end
 end

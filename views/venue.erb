@@ -3,18 +3,18 @@
 <% if @venue.bands().any?() %>
 
   <h3>These bands have played here!</h3>
-
-  <% @venue.bands().each() do |band|%>
-    <%= band.name() %>
-  <% end %>
-
+  <ul>
+    <% @venue.bands().each() do |band|%>
+      <li><%= band.name() %></li>
+    <% end %>
+  </ul>
 <% else %>
 
   <h3>No Concerts have been played here yet</h3>
 
 <% end %>
 
-<br />
+
 <br>
 
 <a href="/" ><button type="button" class="btn btn-link">Back To Home Page</button></a>
