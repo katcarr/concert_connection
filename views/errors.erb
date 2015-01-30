@@ -1,0 +1,10 @@
+<h2>Somehting went wrong</h2>
+
+<ul>
+  <% @venue.errors().full_messages.each() do |message|%>
+    <li><%= message %></li>
+  <% end%>
+</ul>
+
+
+<a href="/" ><button type="button" class="btn btn-link">Back To Home Page</button></a>
