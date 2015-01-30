@@ -5,7 +5,7 @@
 <h3>Concert Venues</h3>
 <ul>
   <% @venues.each do |venue|%>
-    <li><%= venue.name() %></li>
+    <li><a href="/venue/<%= venue.id()%>"><%= venue.name() %></a></li>
   <% end%>
 </ul>
 

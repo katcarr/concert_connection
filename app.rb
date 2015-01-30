@@ -17,3 +17,8 @@ post("/add_venue") do
     erb(:errors)
   end
 end
+
+get('/venue/:id') do
+  @venue = Venue.find(params.fetch("id").to_i())
+  erb(:venue)
+end
